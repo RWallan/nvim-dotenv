@@ -32,6 +32,8 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<leader>ms"] = {"<cmd> MarkdownPreview <cr>", desc = "Start Markdown Preview"},
+    ["<leader>mS"] = {"<cmd> MarkdownPreviewStop <cr>", desc = "Stop Markdown Preview"}
   },
   t = {
     -- setting a mapping to false will disable it
