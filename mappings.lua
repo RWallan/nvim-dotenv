@@ -33,7 +33,17 @@ return {
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     ["<leader>ms"] = {"<cmd> MarkdownPreview <cr>", desc = "Start Markdown Preview"},
-    ["<leader>mS"] = {"<cmd> MarkdownPreviewStop <cr>", desc = "Stop Markdown Preview"}
+    ["<leader>mS"] = {"<cmd> MarkdownPreviewStop <cr>", desc = "Stop Markdown Preview"},
+    -- ["<leader>gp"] = {name = "Pull Requests"},
+    -- ["<leader>gpo"] = {"<cmd> GHOpenPR <cr>", desc = "List Pull Requests"},
+    ["<leader>c"] = {
+        function()
+          local bufs = vim.fn.getbufinfo { buflisted = true }
+          require("astronvim.utils.buffer").close(0)
+          if require("astronvim.utils").is_available "alpha-nvim" and not bufs[2] then require("alpha").start(true) end
+        end,
+        desc = "Close buffer",
+      },
   },
   t = {
     -- setting a mapping to false will disable it
