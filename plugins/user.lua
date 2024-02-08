@@ -26,4 +26,25 @@ return {
     ft = { "markdown" },
     event = "User AstroFile"
   },
+  {
+    "ldelossa/gh.nvim",
+    dependencies = {
+        {
+        "ldelossa/litee.nvim",
+        config = function()
+            require("litee.lib").setup()
+        end,
+        },
+    },
+    config = function()
+        require("litee.gh").setup()
+    end,
+    lazy=false
+  },
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "VeryLazy",
+    opts = {},
+    config = function(_, opts) require'lsp_signature'.setup(opts) end
+}
 }
