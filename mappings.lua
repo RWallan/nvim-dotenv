@@ -32,6 +32,7 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<leader>m"] = { name = "Markdown"},
     ["<leader>ms"] = {"<cmd> MarkdownPreview <cr>", desc = "Start Markdown Preview"},
     ["<leader>mS"] = {"<cmd> MarkdownPreviewStop <cr>", desc = "Stop Markdown Preview"},
     ["<leader>c"] = {
@@ -42,6 +43,8 @@ return {
         end,
         desc = "Close buffer",
       },
+    ["<leader>r"] = {"<cmd> RunCode <cr>", desc = "Run Code"},
+    ["<leader>rf"] = {"<cmd> RunFile <cr>", desc = "Run the current file"}
   },
   t = {
     -- setting a mapping to false will disable it

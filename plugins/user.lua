@@ -46,5 +46,16 @@ return {
     event = "VeryLazy",
     opts = {},
     config = function(_, opts) require'lsp_signature'.setup(opts) end
-}
-}
+  },
+  {
+    "CRAG666/code_runner.nvim",
+    config = function()
+      require("code_runner").setup({
+        filetype = {
+          python = "python3 -u"
+        }
+      })
+    end,
+    lazy=false
+  }
+  }
